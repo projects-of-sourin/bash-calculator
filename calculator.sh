@@ -1,4 +1,6 @@
 #!/bin/bash
+
+#Function to get user input
 function read_number() {
     read -p "Enter number1: " num1
     read -p "Enter number2: " num2
@@ -13,7 +15,7 @@ do
         echo -e "Please choose from the given option\n"
     else
         case $option in
-            1)  sum=0
+            1)  sum=0                   #Option 1 for addition using while loop
                 while true
                 do
                     read -p "Enter number(only Enter for result): " num
@@ -24,11 +26,11 @@ do
                 done
                 echo -e "Sum of two given numbers: $sum\n" ;;
 
-            2)  read_number
+            2)  read_number             #Option 2 for subtraction accepts function call
                 answer=$(echo "scale=2;$num1 - $num2" | bc -l)
                 echo -e "Difference of two given numbers: $answer\n" ;;
 
-            3)  multiply=1
+            3)  multiply=1              #Option 3 for mutiplication using while loop
                 while true
                 do
                     read -p "Enter number(only Enter for result): " num
@@ -40,7 +42,7 @@ do
 
                 echo -e "Multiplication given numbers: $multiply\n" ;;
 
-            4)  read_number
+            4)  read_number             #Option 4 for division accepts function call
                 answer=$(echo "scale=2;$num1 / $num2" | bc -l)
                 echo -e "Division of two given numbers: $answer\n" ;;
 
